@@ -1578,140 +1578,138 @@ paths:
                 - git_repository
                 - git_branch
                 - ports_exposes
-              items:
-                type: object
-                properties:
-                  type:
-                    type: string
-                    example: "public"
-                  instant_deploy:
-                    type: boolean
-                    default: false
-                    description: Deploy application after creation.
-                  id:
-                    type: integer
-                  uuid:
-                    type: string
-                  name:
-                    type: string
-                  description:
-                    type: string
-                  project_uuid:
-                    type: string
-                  environment_name:
-                    type: string
-                  server_uuid:
-                    type: string
-                  destination_uuid:
-                    type: string
-                  is_static:
-                    type: boolean
-                  domains:
-                    type: string
-                  git_repository:
-                    type: string
-                  git_branch:
-                    type: string
-                  git_commit_sha:
-                    type: string
-                  docker_registry_image_name:
-                    type: string
-                  docker_registry_image_tag:
-                    type: string
-                  build_pack:
-                    type: string
-                  install_command:
-                    type: string
-                  build_command:
-                    type: string
-                  start_command:
-                    type: string
-                  ports_exposes:
-                    type: string
-                  ports_mappings:
-                    type: string
-                  base_directory:
-                    type: string
-                  publish_directory:
-                    type: string
-                  health_check_enabled:
-                    type: boolean
-                  health_check_path:
-                    type: string
-                  health_check_port:
-                    type: integer
-                  health_check_host:
-                    type: string
-                  health_check_method:
-                    type: string
-                  health_check_return_code:
-                    type: integer
-                  health_check_scheme:
-                    type: string
-                  health_check_response_text:
-                    type: string
-                  health_check_interval:
-                    type: integer
-                  health_check_timeout:
-                    type: integer
-                  health_check_retries:
-                    type: integer
-                  health_check_start_period:
-                    type: integer
-                  limits_memory:
-                    type: string
-                  limits_memory_swap:
-                    type: string
-                  limits_memory_swappiness:
-                    type: integer
-                  limits_memory_reservation:
-                    type: string
-                  limits_cpus:
-                    type: string
-                  limits_cpuset:
-                    type: string
-                  limits_cpu_shares:
-                    type: integer
-                  custom_labels:
-                    type: string
-                  custom_docker_run_options:
-                    type: string
-                  post_deployment_command:
-                    type: string
-                  post_deployment_command_container:
-                    type: string
-                  pre_deployment_command:
-                    type: string
-                  pre_deployment_command_container:
-                    type: string
-                  manual_webhook_secret_github:
-                    type: string
-                  manual_webhook_secret_gitlab:
-                    type: string
-                  manual_webhook_secret_bitbucket:
-                    type: string
-                  manual_webhook_secret_gitea:
-                    type: string
-                  redirect:
-                    type: string
-                  github_app_uuid:
-                    type: string
-                  dockerfile:
-                    type: string
-                  docker_compose_location:
-                    type: string
-                  docker_compose:
-                    type: string
-                  docker_compose_raw:
-                    type: string
-                  docker_compose_custom_start_command:
-                    type: string
-                  docker_compose_custom_build_command:
-                    type: string
-                  docker_compose_domains:
-                    type: string
-                  watch_paths:
-                    type: string
+              properties:
+                type:
+                  type: string
+                  example: "public"
+                instant_deploy:
+                  type: boolean
+                  default: false
+                  description: Deploy application after creation.
+                id:
+                  type: integer
+                uuid:
+                  type: string
+                name:
+                  type: string
+                description:
+                  type: string
+                project_uuid:
+                  type: string
+                environment_name:
+                  type: string
+                server_uuid:
+                  type: string
+                destination_uuid:
+                  type: string
+                is_static:
+                  type: boolean
+                domains:
+                  type: string
+                git_repository:
+                  type: string
+                git_branch:
+                  type: string
+                git_commit_sha:
+                  type: string
+                docker_registry_image_name:
+                  type: string
+                docker_registry_image_tag:
+                  type: string
+                build_pack:
+                  type: string
+                install_command:
+                  type: string
+                build_command:
+                  type: string
+                start_command:
+                  type: string
+                ports_exposes:
+                  type: string
+                ports_mappings:
+                  type: string
+                base_directory:
+                  type: string
+                publish_directory:
+                  type: string
+                health_check_enabled:
+                  type: boolean
+                health_check_path:
+                  type: string
+                health_check_port:
+                  type: integer
+                health_check_host:
+                  type: string
+                health_check_method:
+                  type: string
+                health_check_return_code:
+                  type: integer
+                health_check_scheme:
+                  type: string
+                health_check_response_text:
+                  type: string
+                health_check_interval:
+                  type: integer
+                health_check_timeout:
+                  type: integer
+                health_check_retries:
+                  type: integer
+                health_check_start_period:
+                  type: integer
+                limits_memory:
+                  type: string
+                limits_memory_swap:
+                  type: string
+                limits_memory_swappiness:
+                  type: integer
+                limits_memory_reservation:
+                  type: string
+                limits_cpus:
+                  type: string
+                limits_cpuset:
+                  type: string
+                limits_cpu_shares:
+                  type: integer
+                custom_labels:
+                  type: string
+                custom_docker_run_options:
+                  type: string
+                post_deployment_command:
+                  type: string
+                post_deployment_command_container:
+                  type: string
+                pre_deployment_command:
+                  type: string
+                pre_deployment_command_container:
+                  type: string
+                manual_webhook_secret_github:
+                  type: string
+                manual_webhook_secret_gitlab:
+                  type: string
+                manual_webhook_secret_bitbucket:
+                  type: string
+                manual_webhook_secret_gitea:
+                  type: string
+                redirect:
+                  type: string
+                github_app_uuid:
+                  type: string
+                dockerfile:
+                  type: string
+                docker_compose_location:
+                  type: string
+                docker_compose:
+                  type: string
+                docker_compose_raw:
+                  type: string
+                docker_compose_custom_start_command:
+                  type: string
+                docker_compose_custom_build_command:
+                  type: string
+                docker_compose_domains:
+                  type: string
+                watch_paths:
+                  type: string
       responses:
         "201":
           description: OK
