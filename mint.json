@@ -174,7 +174,7 @@
       ]
     },
     {
-      "group": "Deploy",
+      "group": "Webhooks",
       "pages": [
         "api-reference/deploy"
       ]
@@ -221,6 +221,20 @@
         "api-reference/server-by-uuid",
         "api-reference/server-domains-by-uuid",
         "api-reference/server-resources-by-uuid"
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "api-reference/resources-list"
+      ]
+    },
+    {
+      "group": "Applications",
+      "pages": [
+        "api-reference/applications-list",
+        "api-reference/application-by-uuid",
+        "api-reference/application-create-public"
       ]
     },
     {
