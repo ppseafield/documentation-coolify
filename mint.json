@@ -176,17 +176,51 @@
     {
       "group": "Deploy",
       "pages": [
-        "api-reference/deploy-webhook"
+        "api-reference/deploy"
+      ]
+    },
+    {
+      "group": "Deployments",
+      "pages": [
+        "api-reference/deployments-list",
+        "api-reference/deployments-by-uuid"
       ]
     },
     {
       "group": "Teams",
       "pages": [
-        "api-reference/list-teams",
-        "api-reference/list-team-members",
-        "api-reference/get-current-team",
-        "api-reference/list-current-team-members",
-        "api-reference/get-team-by-teamid"
+        "api-reference/teams-list",
+        "api-reference/team-by-id",
+        "api-reference/team-members",
+        "api-reference/team-authenticated",
+        "api-reference/team-members-authenticated"
+      ]
+    },
+    {
+      "group": "Projects",
+      "pages": [
+        "api-reference/projects-list",
+        "api-reference/project-by-uuid",
+        "api-reference/project-environments"
+      ]
+    },
+    {
+      "group": "Private Keys",
+      "pages": [
+        "api-reference/private-keys-list",
+        "api-reference/private-key-by-uuid",
+        "api-reference/private-key-create",
+        "api-reference/private-key-update",
+        "api-reference/private-key-delete"
+      ]
+    },
+    {
+      "group": "Servers",
+      "pages": [
+        "api-reference/servers-list",
+        "api-reference/server-by-uuid",
+        "api-reference/server-domains-by-uuid",
+        "api-reference/server-resources-by-uuid"
       ]
     },
     {

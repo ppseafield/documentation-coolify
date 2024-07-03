@@ -30,9 +30,94 @@ paths:
       responses:
         "200":
           description: OK
+  /deployments:
+    get:
+      summary: Deployments List
+      description: Get the list of currently running deployments.
+      parameters: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+
+  /deployments/{uuid}:
+    get:
+      summary: Deployments by UUID
+      description: Get a history of a deployment by UUID.
+      parameters:
+        - in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+          description: The deployment's UUID.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  application_id:
+                    type: string
+                  application_name:
+                    type: string
+                  commit:
+                    type: string
+                  commit_message:
+                    type: string
+                    nullable: true
+                  current_process_id:
+                    type: string
+                  deployment_url:
+                    type: string
+                  deployment_uuid:
+                    type: string
+                  destination_id:
+                    type: string
+                  force_rebuild:
+                    type: boolean
+                  git_type:
+                    type: string
+                    nullable: true
+                  is_api:
+                    type: boolean
+                  is_webhook:
+                    type: boolean
+                  logs:
+                    type: string
+                  only_this_server:
+                    type: boolean
+                  pull_request_id:
+                    type: integer
+                  restart_only:
+                    type: boolean
+                  rollback:
+                    type: boolean
+                  server_id:
+                    type: integer
+                  server_name:
+                    type: string
+                  status:
+                    type: string
+                  created_at:
+                    type: string
+                    format: date-time
+                  updated_at:
+                    type: string
+                    format: date-time
+
   /teams:
     get:
-      summary: Teams
+      summary: Teams List
       description: Get the list of teams for the currently authenticated user.
       responses:
         "401":
@@ -54,112 +139,112 @@ paths:
                 items:
                   type: object
                   properties:
-                      id:
-                        type: integer
-                      description:
-                        type: string
-                      name:
-                        type: string
-                      discord_enabled:
-                        type: boolean
-                      discord_notifications_database_backups:
-                        type: boolean
-                      discord_notifications_deployments:
-                        type: boolean
-                      discord_notifications_scheduled_tasks:
-                        type: boolean
-                      discord_notifications_status_changes:
-                        type: boolean
-                      discord_notifications_test:
-                        type: boolean
-                      discord_webhook_url:
-                        type: string
-                      personal_team:
-                        type: boolean
-                      resend_api_key:
-                        type: string
-                        nullable: true
-                      resend_enabled:
-                        type: boolean
-                      show_boarding:
-                        type: boolean
-                      smtp_enabled:
-                        type: boolean
-                      smtp_encryption:
-                        type: string
-                        nullable: true
-                      smtp_from_address:
-                        type: string
-                        nullable: true
-                      smtp_from_name:
-                        type: string
-                        nullable: true
-                      smtp_host:
-                        type: string
-                        nullable: true
-                      smtp_notifications_database_backups:
-                        type: boolean
-                      smtp_notifications_deployments:
-                        type: boolean
-                      smtp_notifications_scheduled_tasks:
-                        type: boolean
-                      smtp_notifications_status_changes:
-                        type: boolean
-                      smtp_notifications_test:
-                        type: boolean
-                      smtp_password:
-                        type: string
-                        nullable: true
-                      smtp_port:
-                        type: integer
-                        nullable: true
-                      smtp_recipients:
-                        type: string
-                        nullable: true
-                      smtp_timeout:
-                        type: integer
-                        nullable: true
-                      smtp_username:
-                        type: string
-                        nullable: true
-                      telegram_chat_id:
-                        type: string
-                      telegram_enabled:
-                        type: boolean
-                      telegram_notifications_database_backups:
-                        type: boolean
-                      telegram_notifications_database_backups_message_thread_id:
-                        type: string
-                      telegram_notifications_deployments:
-                        type: boolean
-                      telegram_notifications_deployments_message_thread_id:
-                        type: string
-                      telegram_notifications_scheduled_tasks:
-                        type: boolean
-                      telegram_notifications_scheduled_tasks_thread_id:
-                        type: string
-                      telegram_notifications_status_changes:
-                        type: boolean
-                      telegram_notifications_status_changes_message_thread_id:
-                        type: string
-                      telegram_notifications_test:
-                        type: boolean
-                      telegram_notifications_test_message_thread_id:
-                        type: string
-                      telegram_token:
-                        type: string
-                      use_instance_email_settings:
-                        type: boolean
-                      created_at:
-                        type: string
-                        format: date-time
-                      updated_at:
-                        type: string
-                        format: date-time
+                    id:
+                      type: integer
+                    description:
+                      type: string
+                    name:
+                      type: string
+                    discord_enabled:
+                      type: boolean
+                    discord_notifications_database_backups:
+                      type: boolean
+                    discord_notifications_deployments:
+                      type: boolean
+                    discord_notifications_scheduled_tasks:
+                      type: boolean
+                    discord_notifications_status_changes:
+                      type: boolean
+                    discord_notifications_test:
+                      type: boolean
+                    discord_webhook_url:
+                      type: string
+                    personal_team:
+                      type: boolean
+                    resend_api_key:
+                      type: string
+                      nullable: true
+                    resend_enabled:
+                      type: boolean
+                    show_boarding:
+                      type: boolean
+                    smtp_enabled:
+                      type: boolean
+                    smtp_encryption:
+                      type: string
+                      nullable: true
+                    smtp_from_address:
+                      type: string
+                      nullable: true
+                    smtp_from_name:
+                      type: string
+                      nullable: true
+                    smtp_host:
+                      type: string
+                      nullable: true
+                    smtp_notifications_database_backups:
+                      type: boolean
+                    smtp_notifications_deployments:
+                      type: boolean
+                    smtp_notifications_scheduled_tasks:
+                      type: boolean
+                    smtp_notifications_status_changes:
+                      type: boolean
+                    smtp_notifications_test:
+                      type: boolean
+                    smtp_password:
+                      type: string
+                      nullable: true
+                    smtp_port:
+                      type: integer
+                      nullable: true
+                    smtp_recipients:
+                      type: string
+                      nullable: true
+                    smtp_timeout:
+                      type: integer
+                      nullable: true
+                    smtp_username:
+                      type: string
+                      nullable: true
+                    telegram_chat_id:
+                      type: string
+                    telegram_enabled:
+                      type: boolean
+                    telegram_notifications_database_backups:
+                      type: boolean
+                    telegram_notifications_database_backups_message_thread_id:
+                      type: string
+                    telegram_notifications_deployments:
+                      type: boolean
+                    telegram_notifications_deployments_message_thread_id:
+                      type: string
+                    telegram_notifications_scheduled_tasks:
+                      type: boolean
+                    telegram_notifications_scheduled_tasks_thread_id:
+                      type: string
+                    telegram_notifications_status_changes:
+                      type: boolean
+                    telegram_notifications_status_changes_message_thread_id:
+                      type: string
+                    telegram_notifications_test:
+                      type: boolean
+                    telegram_notifications_test_message_thread_id:
+                      type: string
+                    telegram_token:
+                      type: string
+                    use_instance_email_settings:
+                      type: boolean
+                    created_at:
+                      type: string
+                      format: date-time
+                    updated_at:
+                      type: string
+                      format: date-time
   /team/{teamId}:
     get:
-      summary: Team by id
-      description: Get a team by `teamId`.
+      summary: Team by Id
+      description: Get a team by `Id`.
       parameters:
         - in: path
           name: teamId
@@ -302,7 +387,7 @@ paths:
                     format: date-time
   /team/{teamId}/members:
     get:
-      summary: Team's Members
+      summary: Team Members
       description: Get the list of members in a team by `teamId`.
       parameters:
         - in: path
@@ -369,7 +454,7 @@ paths:
                       format: date-time
   /team/current:
     get:
-      summary: Authenticated Team
+      summary: Team Authenticated
       description: Get the currently authenticated team.
       responses:
         "401":
@@ -493,7 +578,7 @@ paths:
                     format: date-time
   /team/current/members:
     get:
-      summary: Authenticated Team's Members
+      summary: Team Members Authenticated
       description: Get the list of members in the currently authenticated team.
       responses:
         "401":
@@ -540,8 +625,8 @@ paths:
                       format: date-time
   /projects:
     get:
-      summary: Projects
-      description: 'Get list of projects'
+      summary: Projects List
+      description: "Get list of projects"
       parameters: []
       responses:
         "401":
@@ -563,19 +648,735 @@ paths:
                 items:
                   type: object
                   properties:
-                    success:
-                      type: boolean
-                    data:
+                    id:
+                      type: integer
+                    uuid:
+                      type: string
+                    description:
+                      type: string
+                    name:
+                      type: string
+                    environments:
                       type: array
                       items:
                         type: object
                         properties:
                           id:
                             type: integer
-                          uuid:
-                            type: string
                           name:
                             type: string
+                          project_id:
+                            type: integer
+                          created_at:
+                            type: string
+                            format: date-time
+                          updated_at:
+                            type: string
+                            format: date-time
+                          description:
+                            type: string
+                            nullable: true
+                    team_id:
+                      type: integer
+                    created_at:
+                      type: string
+                      format: date-time
+                    updated_at:
+                      type: string
+                      format: date-time
+  /projects/{uuid}:
+    get:
+      summary: Project by UUID
+      description: "Get a project by UUID"
+      parameters:
+        - in: path
+          name: projectUuuid
+          required: true
+          schema:
+            type: string
+          description: The project's UUID.
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
+        "404":
+          description: Project not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Project not found.
+                  docs:
+                    type: string
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                properties:
+                  id:
+                    type: integer
+                  uuid:
+                    type: string
+                  description:
+                    type: string
+                  name:
+                    type: string
+                  environments:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        project_id:
+                          type: integer
+                        created_at:
+                          type: string
+                          format: date-time
+                        updated_at:
+                          type: string
+                          format: date-time
+                        description:
+                          type: string
+                          nullable: true
+                  team_id:
+                    type: integer
+                  created_at:
+                    type: string
+                    format: date-time
+                  updated_at:
+                    type: string
+                    format: date-time
+  /projects/{uuid}/{environment}:
+    get:
+      summary: Project Environments
+      description: "Get a project by UUID and environment name."
+      parameters:
+        - in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+          description: The project's UUID.
+        - in: path
+          name: environment
+          required: true
+          schema:
+            type: string
+          description: The environment name.
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
+        "404":
+          description: Project not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Project not found.
+                  docs:
+                    type: string
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    project_id:
+                      type: integer
+                    name:
+                      type: string
+                    description:
+                      type: string
+                      nullable: true
+                    applications:
+                      type: array
+                    mariadbs:
+                      type: array
+                    mongodbs:
+                      type: array
+                    mysqls:
+                      type: array
+                    postgresqls:
+                      type: array
+                    redis:
+                      type: array
+                    services:
+                      type: array
+                    created_at:
+                      type: string
+                      format: date-time
+                    updated_at:
+                      type: string
+                      format: date-time
+  /security/keys:
+    get:
+      summary: Private Keys List
+      description: "Get the list of private keys."
+      parameters: []
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    uuid:
+                      type: string
+                    description:
+                      type: string
+                    name:
+                      type: string
+                    is_git_related:
+                      type: boolean
+                    private_key:
+                      type: string
+                    team_id:
+                      type: integer
+                    created_at:
+                      type: string
+                      format: date-time
+                    updated_at:
+                      type: string
+                      format: date-time
+    post:
+      summary: Private Key Create
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - private_key
+              properties:
+                name:
+                  type: string
+                  example: "My Private Key"
+                  description: "The name of the private key."
+                description:
+                  type: string
+                  example: "My private key description"
+                  description: "A description for the private key."
+                private_key:
+                  type: string
+                  example: "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn\nNhAAAAAwEAAQAAAYEAq3"
+                  description: "An OPENSSH private key in one line. Use `\\n` for new lines."
+      description: "Create a private key."
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
+        "201":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uuid:
+                    type: string
+
+  /security/keys/{uuid}:
+    get:
+      summary: Private Key by UUID
+      description: "Get a private key by UUID."
+      parameters:
+        - in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+          description: The private key's UUID.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  uuid:
+                    type: string
+                  description:
+                    type: string
+                  name:
+                    type: string
+                  is_git_related:
+                    type: boolean
+                  private_key:
+                    type: string
+                  team_id:
+                    type: integer
+                  created_at:
+                    type: string
+                    format: date-time
+                  updated_at:
+                    type: string
+                    format: date-time
+    patch:
+      summary: Private Key update
+      description: "Update a private key."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "My Private Key"
+                  description: "The name of the private key."
+                description:
+                  type: string
+                  example: "My private key description"
+                  description: "A description for the private key."
+                private_key:
+                  type: string
+                  example: "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn\nNhAAAAAwEAAQAAAYEAq3"
+                  description: "An OPENSSH private key in one line. Use `\\n` for new lines."
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
+        "404":
+          description: Private Key not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Private Key not found.
+        "201":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uuid:
+                    type: string
+    delete:
+      summary: Private Key delete
+      description: "Delete a private key."
+      parameters:
+        - in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+          description: The private key's UUID.
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
+        "404":
+          description: Private Key not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Private Key not found.
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Key deleted.
+  /servers:
+    get:
+      summary: Servers List
+      description: "Get the list of servers."
+      parameters: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    uuid:
+                      type: string
+                    name:
+                      type: string
+                    ip:
+                      type: string
+                    is_reachable:
+                      type: boolean
+                    is_usable:
+                      type: boolean
+                    port:
+                      type: integer
+                    settings:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        cleanup_after_percentage:
+                          type: integer
+                        concurrent_builds:
+                          type: integer
+                        dynamic_timeout:
+                          type: integer
+                        force_disabled:
+                          type: boolean
+                        is_build_server:
+                          type: boolean
+                        is_cloudflare_tunnel:
+                          type: boolean
+                        is_jump_server:
+                          type: boolean
+                        is_logdrain_axiom_enabled:
+                          type: boolean
+                        is_logdrain_custom_enabled:
+                          type: boolean
+                        is_logdrain_highlight_enabled:
+                          type: boolean
+                        is_logdrain_newrelic_enabled:
+                          type: boolean
+                        is_metrics_enabled:
+                          type: boolean
+                        is_reachable:
+                          type: boolean
+                        is_server_api_enabled:
+                          type: boolean
+                        is_swarm_manager:
+                          type: boolean
+                        is_swarm_worker:
+                          type: boolean
+                        is_usable:
+                          type: boolean
+                        logdrain_axiom_api_key:
+                          type: string
+                          nullable: true
+                        logdrain_axiom_dataset_name:
+                          type: string
+                          nullable: true
+                        logdrain_custom_config:
+                          type: string
+                          nullable: true
+                        logdrain_custom_config_parser:
+                          type: string
+                          nullable: true
+                        logdrain_highlight_project_id:
+                          type: string
+                          nullable: true
+                        logdrain_newrelic_base_uri:
+                          type: string
+                          nullable: true
+                        logdrain_newrelic_license_key:
+                          type: string
+                          nullable: true
+                        metrics_history_days:
+                          type: integer
+                        metrics_refresh_rate_seconds:
+                          type: integer
+                        metrics_token:
+                          type: string
+                        server_id:
+                          type: integer
+                        wildcard_domain:
+                          type: string
+                        created_at:
+                          type: string
+                          format: date-time
+                        updated_at:
+                          type: string
+                          format: date-time
+                    user:
+                      type: string
+  /servers/{uuid}:
+    get:
+      summary: Server By UUID
+      description: "Get a server by UUID."
+      parameters:
+        - in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+          description: The server's UUID.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  uuid:
+                    type: string
+                  description:
+                    type: string
+                  name:
+                    type: string
+                  high_disk_usage_notification_sent:
+                    type: boolean
+                  ip:
+                    type: string
+                  log_drain_notification_sent:
+                    type: boolean
+                  port:
+                    type: integer
+                  private_key_id:
+                    type: integer
+                  proxy:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                      type:
+                        type: string
+                      last_saved_settings:
+                        type: string
+                      last_applied_settings:
+                        type: string
+                      force_stop:
+                        type: boolean
+                      redirect_url:
+                        type: string
+                        nullable: true
+                  settings:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      cleanup_after_percentage:
+                        type: integer
+                      concurrent_builds:
+                        type: integer
+                      dynamic_timeout:
+                        type: integer
+                      force_disabled:
+                        type: boolean
+                      is_build_server:
+                        type: boolean
+                      is_cloudflare_tunnel:
+                        type: boolean
+                      is_jump_server:
+                        type: boolean
+                      is_logdrain_axiom_enabled:
+                        type: boolean
+                      is_logdrain_custom_enabled:
+                        type: boolean
+                      is_logdrain_highlight_enabled:
+                        type: boolean
+                      is_logdrain_newrelic_enabled:
+                        type: boolean
+                      is_metrics_enabled:
+                        type: boolean
+                      is_reachable:
+                        type: boolean
+                      is_server_api_enabled:
+                        type: boolean
+                      is_swarm_manager:
+                        type: boolean
+                      is_swarm_worker:
+                        type: boolean
+                      is_usable:
+                        type: boolean
+                      logdrain_axiom_api_key:
+                        type: string
+                        nullable: true
+                      logdrain_axiom_dataset_name:
+                        type: string
+                        nullable: true
+                      logdrain_custom_config:
+                        type: string
+                        nullable: true
+                      logdrain_custom_config_parser:
+                        type: string
+                        nullable: true
+                      logdrain_highlight_project_id:
+                        type: string
+                        nullable: true
+                      logdrain_newrelic_base_uri:
+                        type: string
+                        nullable: true
+                      logdrain_newrelic_license_key:
+                        type: string
+                        nullable: true
+                      metrics_history_days:
+                        type: integer
+                      metrics_refresh_rate_seconds:
+                        type: integer
+                      metrics_token:
+                        type: string
+                      server_id:
+                        type: integer
+                      wildcard_domain:
+                        type: string
+                      created_at:
+                        type: string
+                        format: date-time
+                      updated_at:
+                        type: string
+                        format: date-time
+                  swarm_cluster:
+                    type: string
+                    nullable: true
+                  team_id:
+                    type: integer
+                  unreachable_count:
+                    type: integer
+                  unreachable_notification_sent:
+                    type: boolean
+                  user:
+                    type: string
+                  created_at:
+                    type: string
+                    format: date-time
+                  updated_at:
+                    type: string
+                    format: date-time
+  /servers/{uuid}/domains:
+    get:
+      summary: Server Domains By UUID
+      description: "Get a server's domains by UUID."
+      parameters:
+        - in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+          description: The server's UUID.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ip:
+                    type: string
+                  domains:
+                    type: array
+                    items:
+                      type: string
+  /servers/{uuid}/resources:
+    get:
+      summary: Server Resources By UUID
+      description: "Get a server's resources by UUID."
+      parameters:
+        - in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+          description: The server's UUID.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  uuid:
+                    type: string
+                  name:
+                    type: string
+                  type:
+                    type: string
+                  created_at:
+                    type: string
+                    format: date-time
+                  updated_at:
+                    type: string
+                    format: date-time
+                  status:
+                    type: string
+
 components:
   securitySchemes:
     bearerAuth:
