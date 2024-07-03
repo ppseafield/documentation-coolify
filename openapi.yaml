@@ -8,7 +8,7 @@ servers:
 paths:
   /deploy:
     get:
-      summary: Deploy Webhook
+      summary: Deploy
       description: Deploy a resource by UUID or tag.
       parameters:
         - in: query
@@ -32,9 +32,19 @@ paths:
           description: OK
   /teams:
     get:
-      summary: List Teams
+      summary: Teams
       description: Get the list of teams for the currently authenticated user.
       responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
         "200":
           description: OK
           content:
@@ -44,23 +54,111 @@ paths:
                 items:
                   type: object
                   properties:
-                    id:
-                      type: string
-                    name:
-                      type: string
-                    description:
-                      type: string
-                    personal_team:
-                      type: boolean
-                    created_at:
-                      type: string
-                      format: date-time
-                    updated_at:
-                      type: string
-                      format: date-time
+                      id:
+                        type: integer
+                      description:
+                        type: string
+                      name:
+                        type: string
+                      discord_enabled:
+                        type: boolean
+                      discord_notifications_database_backups:
+                        type: boolean
+                      discord_notifications_deployments:
+                        type: boolean
+                      discord_notifications_scheduled_tasks:
+                        type: boolean
+                      discord_notifications_status_changes:
+                        type: boolean
+                      discord_notifications_test:
+                        type: boolean
+                      discord_webhook_url:
+                        type: string
+                      personal_team:
+                        type: boolean
+                      resend_api_key:
+                        type: string
+                        nullable: true
+                      resend_enabled:
+                        type: boolean
+                      show_boarding:
+                        type: boolean
+                      smtp_enabled:
+                        type: boolean
+                      smtp_encryption:
+                        type: string
+                        nullable: true
+                      smtp_from_address:
+                        type: string
+                        nullable: true
+                      smtp_from_name:
+                        type: string
+                        nullable: true
+                      smtp_host:
+                        type: string
+                        nullable: true
+                      smtp_notifications_database_backups:
+                        type: boolean
+                      smtp_notifications_deployments:
+                        type: boolean
+                      smtp_notifications_scheduled_tasks:
+                        type: boolean
+                      smtp_notifications_status_changes:
+                        type: boolean
+                      smtp_notifications_test:
+                        type: boolean
+                      smtp_password:
+                        type: string
+                        nullable: true
+                      smtp_port:
+                        type: integer
+                        nullable: true
+                      smtp_recipients:
+                        type: string
+                        nullable: true
+                      smtp_timeout:
+                        type: integer
+                        nullable: true
+                      smtp_username:
+                        type: string
+                        nullable: true
+                      telegram_chat_id:
+                        type: string
+                      telegram_enabled:
+                        type: boolean
+                      telegram_notifications_database_backups:
+                        type: boolean
+                      telegram_notifications_database_backups_message_thread_id:
+                        type: string
+                      telegram_notifications_deployments:
+                        type: boolean
+                      telegram_notifications_deployments_message_thread_id:
+                        type: string
+                      telegram_notifications_scheduled_tasks:
+                        type: boolean
+                      telegram_notifications_scheduled_tasks_thread_id:
+                        type: string
+                      telegram_notifications_status_changes:
+                        type: boolean
+                      telegram_notifications_status_changes_message_thread_id:
+                        type: string
+                      telegram_notifications_test:
+                        type: boolean
+                      telegram_notifications_test_message_thread_id:
+                        type: string
+                      telegram_token:
+                        type: string
+                      use_instance_email_settings:
+                        type: boolean
+                      created_at:
+                        type: string
+                        format: date-time
+                      updated_at:
+                        type: string
+                        format: date-time
   /team/{teamId}:
     get:
-      summary: Get Team by teamId
+      summary: Team by id
       description: Get a team by `teamId`.
       parameters:
         - in: path
@@ -70,6 +168,29 @@ paths:
             type: string
           description: The team ID.
       responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
+        "404":
+          description: Team not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Team not found.
+                  docs:
+                    type: string
+                    example: "https://coolify.io/docs/api-reference/get-team-by-teamid-members"
         "200":
           description: OK
           content:
@@ -78,12 +199,100 @@ paths:
                 type: object
                 properties:
                   id:
+                    type: integer
+                  description:
                     type: string
                   name:
                     type: string
-                  description:
+                  discord_enabled:
+                    type: boolean
+                  discord_notifications_database_backups:
+                    type: boolean
+                  discord_notifications_deployments:
+                    type: boolean
+                  discord_notifications_scheduled_tasks:
+                    type: boolean
+                  discord_notifications_status_changes:
+                    type: boolean
+                  discord_notifications_test:
+                    type: boolean
+                  discord_webhook_url:
                     type: string
                   personal_team:
+                    type: boolean
+                  resend_api_key:
+                    type: string
+                    nullable: true
+                  resend_enabled:
+                    type: boolean
+                  show_boarding:
+                    type: boolean
+                  smtp_enabled:
+                    type: boolean
+                  smtp_encryption:
+                    type: string
+                    nullable: true
+                  smtp_from_address:
+                    type: string
+                    nullable: true
+                  smtp_from_name:
+                    type: string
+                    nullable: true
+                  smtp_host:
+                    type: string
+                    nullable: true
+                  smtp_notifications_database_backups:
+                    type: boolean
+                  smtp_notifications_deployments:
+                    type: boolean
+                  smtp_notifications_scheduled_tasks:
+                    type: boolean
+                  smtp_notifications_status_changes:
+                    type: boolean
+                  smtp_notifications_test:
+                    type: boolean
+                  smtp_password:
+                    type: string
+                    nullable: true
+                  smtp_port:
+                    type: integer
+                    nullable: true
+                  smtp_recipients:
+                    type: string
+                    nullable: true
+                  smtp_timeout:
+                    type: integer
+                    nullable: true
+                  smtp_username:
+                    type: string
+                    nullable: true
+                  telegram_chat_id:
+                    type: string
+                  telegram_enabled:
+                    type: boolean
+                  telegram_notifications_database_backups:
+                    type: boolean
+                  telegram_notifications_database_backups_message_thread_id:
+                    type: string
+                  telegram_notifications_deployments:
+                    type: boolean
+                  telegram_notifications_deployments_message_thread_id:
+                    type: string
+                  telegram_notifications_scheduled_tasks:
+                    type: boolean
+                  telegram_notifications_scheduled_tasks_thread_id:
+                    type: string
+                  telegram_notifications_status_changes:
+                    type: boolean
+                  telegram_notifications_status_changes_message_thread_id:
+                    type: string
+                  telegram_notifications_test:
+                    type: boolean
+                  telegram_notifications_test_message_thread_id:
+                    type: string
+                  telegram_token:
+                    type: string
+                  use_instance_email_settings:
                     type: boolean
                   created_at:
                     type: string
@@ -93,7 +302,7 @@ paths:
                     format: date-time
   /team/{teamId}/members:
     get:
-      summary: List Team Members
+      summary: Team's Members
       description: Get the list of members in a team by `teamId`.
       parameters:
         - in: path
@@ -103,6 +312,29 @@ paths:
             type: string
           description: The team ID.
       responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
+        "404":
+          description: Team not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Team not found.
+                  docs:
+                    type: string
+                    example: "https://coolify.io/docs/api-reference/get-team-by-teamid-members"
         "200":
           description: OK
           content:
@@ -113,7 +345,7 @@ paths:
                   type: object
                   properties:
                     id:
-                      type: string
+                      type: integer
                     name:
                       type: string
                     email:
@@ -121,6 +353,14 @@ paths:
                     email_verified_at:
                       type: string
                       format: date-time
+                    force_password_reset:
+                      type: boolean
+                    marketing_emails:
+                      type: boolean
+                    two_factor_confirmed_at:
+                      type: string
+                      format: date-time
+                      nullable: true
                     created_at:
                       type: string
                       format: date-time
@@ -129,9 +369,19 @@ paths:
                       format: date-time
   /team/current:
     get:
-      summary: Get Current Team
+      summary: Authenticated Team
       description: Get the currently authenticated team.
       responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
         "200":
           description: OK
           content:
@@ -140,12 +390,100 @@ paths:
                 type: object
                 properties:
                   id:
+                    type: integer
+                  description:
                     type: string
                   name:
                     type: string
-                  description:
+                  discord_enabled:
+                    type: boolean
+                  discord_notifications_database_backups:
+                    type: boolean
+                  discord_notifications_deployments:
+                    type: boolean
+                  discord_notifications_scheduled_tasks:
+                    type: boolean
+                  discord_notifications_status_changes:
+                    type: boolean
+                  discord_notifications_test:
+                    type: boolean
+                  discord_webhook_url:
                     type: string
                   personal_team:
+                    type: boolean
+                  resend_api_key:
+                    type: string
+                    nullable: true
+                  resend_enabled:
+                    type: boolean
+                  show_boarding:
+                    type: boolean
+                  smtp_enabled:
+                    type: boolean
+                  smtp_encryption:
+                    type: string
+                    nullable: true
+                  smtp_from_address:
+                    type: string
+                    nullable: true
+                  smtp_from_name:
+                    type: string
+                    nullable: true
+                  smtp_host:
+                    type: string
+                    nullable: true
+                  smtp_notifications_database_backups:
+                    type: boolean
+                  smtp_notifications_deployments:
+                    type: boolean
+                  smtp_notifications_scheduled_tasks:
+                    type: boolean
+                  smtp_notifications_status_changes:
+                    type: boolean
+                  smtp_notifications_test:
+                    type: boolean
+                  smtp_password:
+                    type: string
+                    nullable: true
+                  smtp_port:
+                    type: integer
+                    nullable: true
+                  smtp_recipients:
+                    type: string
+                    nullable: true
+                  smtp_timeout:
+                    type: integer
+                    nullable: true
+                  smtp_username:
+                    type: string
+                    nullable: true
+                  telegram_chat_id:
+                    type: string
+                  telegram_enabled:
+                    type: boolean
+                  telegram_notifications_database_backups:
+                    type: boolean
+                  telegram_notifications_database_backups_message_thread_id:
+                    type: string
+                  telegram_notifications_deployments:
+                    type: boolean
+                  telegram_notifications_deployments_message_thread_id:
+                    type: string
+                  telegram_notifications_scheduled_tasks:
+                    type: boolean
+                  telegram_notifications_scheduled_tasks_thread_id:
+                    type: string
+                  telegram_notifications_status_changes:
+                    type: boolean
+                  telegram_notifications_status_changes_message_thread_id:
+                    type: string
+                  telegram_notifications_test:
+                    type: boolean
+                  telegram_notifications_test_message_thread_id:
+                    type: string
+                  telegram_token:
+                    type: string
+                  use_instance_email_settings:
                     type: boolean
                   created_at:
                     type: string
@@ -155,9 +493,19 @@ paths:
                     format: date-time
   /team/current/members:
     get:
-      summary: List Current Team Members
+      summary: Authenticated Team's Members
       description: Get the list of members in the currently authenticated team.
       responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
         "200":
           description: OK
           content:
@@ -168,7 +516,7 @@ paths:
                   type: object
                   properties:
                     id:
-                      type: string
+                      type: integer
                     name:
                       type: string
                     email:
@@ -176,12 +524,58 @@ paths:
                     email_verified_at:
                       type: string
                       format: date-time
+                    force_password_reset:
+                      type: boolean
+                    marketing_emails:
+                      type: boolean
+                    two_factor_confirmed_at:
+                      type: string
+                      format: date-time
+                      nullable: true
                     created_at:
                       type: string
                       format: date-time
                     updated_at:
                       type: string
                       format: date-time
+  /projects:
+    get:
+      summary: Projects
+      description: 'Get list of projects'
+      parameters: []
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Unauthenticated."
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    success:
+                      type: boolean
+                    data:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          uuid:
+                            type: string
+                          name:
+                            type: string
 components:
   securitySchemes:
     bearerAuth:
