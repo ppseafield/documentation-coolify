@@ -23,6 +23,8 @@ http:
     dashboard:
       rule: Host(`<DOMAIN_FOR_TRAEFIK>`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
       service: api@internal
+      tls:
+        certResolver: letsencrypt
       middlewares:
         - auth
   middlewares:
