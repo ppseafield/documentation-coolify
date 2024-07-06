@@ -171,103 +171,15 @@
       "pages": [
         "api-reference/introduction",
         "api-reference/authorization",
-        {
-          "group": "Applications",
-          "pages": [
-            "api-reference/applications-list",
-            "api-reference/application-by-uuid",
-            "api-reference/application-create-public",
-            "api-reference/application-create-private-github-app",
-            "api-reference/application-create-private-deploy-key",
-            "api-reference/application-create-dockerfile",
-            "api-reference/application-create-docker-image",
-            "api-reference/application-create-docker-compose",
-            "api-reference/application-update-by-uuid",
-            "api-reference/application-delete-by-uuid",
-            "api-reference/application-deploy-by-uuid",
-            "api-reference/application-stop-by-uuid",
-            "api-reference/application-restart-by-uuid"
-          ]
-        },
-        {
-          "group": "Databases",
-          "pages": [
-            "api-reference/databases-list",
-            "api-reference/database-by-uuid",
-            "api-reference/database-create",
-            "api-reference/database-delete-by-uuid",
-            "api-reference/database-update-by-uuid",
-            "api-reference/database-deploy-by-uuid",
-            "api-reference/database-stop-by-uuid",
-            "api-reference/database-restart-by-uuid"
-          ]
-        },
-        {
-          "group": "Services",
-          "pages": [
-            "api-reference/services-list",
-            "api-reference/service-by-uuid",
-            "api-reference/service-create",
-            "api-reference/service-delete-by-uuid",
-            "api-reference/service-deploy-by-uuid",
-            "api-reference/service-stop-by-uuid",
-            "api-reference/service-restart-by-uuid"
-          ]
-        },
-        {
-          "group": "Deployments",
-          "pages": [
-            "api-reference/deployments-list",
-            "api-reference/deployments-by-uuid"
-          ]
-        },
+        "api-reference/version",
+        "api-reference/healthcheck",
+        "api-reference/enable-api",
+        "api-reference/disable-api",
         {
           "group": "Teams",
           "pages": [
-            "api-reference/teams-list",
-            "api-reference/team-by-id",
-            "api-reference/team-members",
-            "api-reference/team-authenticated",
-            "api-reference/team-members-authenticated"
-          ]
-        },
-        {
-          "group": "Projects",
-          "pages": [
-            "api-reference/projects-list",
-            "api-reference/project-by-uuid",
-            "api-reference/project-environments"
-          ]
-        },
-        {
-          "group": "Private Keys",
-          "pages": [
-            "api-reference/private-keys-list",
-            "api-reference/private-key-by-uuid",
-            "api-reference/private-key-create",
-            "api-reference/private-key-update",
-            "api-reference/private-key-delete"
-          ]
-        },
-        {
-          "group": "Servers",
-          "pages": [
-            "api-reference/servers-list",
-            "api-reference/server-by-uuid",
-            "api-reference/server-domains-by-uuid",
-            "api-reference/server-resources-by-uuid"
-          ]
-        },
-        {
-          "group": "Resources",
-          "pages": [
-            "api-reference/resources-list"
-          ]
-        },
-        {
-          "group": "Webhooks",
-          "pages": [
-            "api-reference/deploy"
+            "api-reference/teams/list",
+            "api-reference/teams/get"
           ]
         }
       ]
