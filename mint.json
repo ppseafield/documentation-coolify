@@ -176,10 +176,108 @@
         "api-reference/enable-api",
         "api-reference/disable-api",
         {
+          "group": "Servers",
+          "pages": [
+            "api-reference/servers/list",
+            "api-reference/servers/get",
+            "api-reference/servers/resources",
+            "api-reference/servers/domains"
+          ]
+        },
+        {
           "group": "Teams",
           "pages": [
             "api-reference/teams/list",
-            "api-reference/teams/get"
+            "api-reference/teams/get",
+            "api-reference/teams/members",
+            "api-reference/teams/authenticated-team",
+            "api-reference/teams/authenticated-team-members"
+          ]
+        },
+        {
+          "group": "Projects",
+          "pages": [
+            "api-reference/projects/list",
+            "api-reference/projects/get",
+            "api-reference/projects/environment"
+          ]
+        },
+        {
+          "group": "Private Keys",
+          "pages": [
+            "api-reference/private-keys/list",
+            "api-reference/private-keys/get",
+            "api-reference/private-keys/create",
+            "api-reference/private-keys/update",
+            "api-reference/private-keys/delete"
+          ]
+        },
+        {
+          "group": "Deployments",
+          "pages": [
+            "api-reference/deployments/list",
+            "api-reference/deployments/get",
+            "api-reference/deployments/deploy"
+          ]
+        },
+        {
+          "group": "Resources",
+          "pages": [
+            "api-reference/resources/list"
+          ]
+        },
+        {
+          "group": "Applications",
+          "pages": [
+            "api-reference/applications/list",
+            "api-reference/applications/get",
+            "api-reference/applications/update",
+            "api-reference/applications/create-public",
+            "api-reference/applications/create-private--gh-app",
+            "api-reference/applications/create-private--deploy-key",
+            "api-reference/applications/create-dockerfile",
+            "api-reference/applications/create-docker-image",
+            "api-reference/applications/create-docker-compose",
+            "api-reference/applications/delete",
+            "api-reference/applications/list-envs",
+            "api-reference/applications/create-env",
+            "api-reference/applications/update-env",
+            "api-reference/applications/update-envs-bulk",
+            "api-reference/applications/delete-env",
+            "api-reference/applications/start",
+            "api-reference/applications/stop",
+            "api-reference/applications/restart"
+          ]
+        },
+        {
+          "group": "Databases",
+          "pages": [
+            "api-reference/databases/list",
+            "api-reference/databases/get",
+            "api-reference/databases/update",
+            "api-reference/databases/create-postgresql",
+            "api-reference/databases/create-clickhouse",
+            "api-reference/databases/create-dragonfly",
+            "api-reference/databases/create-redis",
+            "api-reference/databases/create-keydb",
+            "api-reference/databases/create-mariadb",
+            "api-reference/databases/create-mysql",
+            "api-reference/databases/create-mongodb",
+            "api-reference/databases/start",
+            "api-reference/databases/stop",
+            "api-reference/databases/restart"
+          ]
+        },
+        {
+          "group": "Services",
+          "pages": [
+            "api-reference/services/list",
+            "api-reference/services/get",
+            "api-reference/services/create",
+            "api-reference/services/delete",
+            "api-reference/services/start",
+            "api-reference/services/stop",
+            "api-reference/services/restart"
           ]
         }
       ]
