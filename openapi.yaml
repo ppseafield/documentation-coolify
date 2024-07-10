@@ -1677,11 +1677,6 @@ paths:
                       example: doogksw,
                       description: "UUID of the deployment.",
                     }
-                  deployment_api_url:
-                    {
-                      type: string,
-                      description: "URL to check deployment status.",
-                    }
                 type: object
         "401":
           $ref: "#/components/responses/401"
@@ -1755,11 +1750,6 @@ paths:
                       type: string,
                       example: doogksw,
                       description: "UUID of the deployment.",
-                    }
-                  deployment_api_url:
-                    {
-                      type: string,
-                      description: "URL to check deployment status.",
                     }
                 type: object
         "401":
