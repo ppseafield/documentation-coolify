@@ -142,6 +142,7 @@
       "pages": [
         "knowledge-base/faq",
         "knowledge-base/applications",
+        "knowledge-base/healthchecks",
         "knowledge-base/databases",
         "knowledge-base/domains",
         "knowledge-base/monitoring",
