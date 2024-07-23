@@ -181,8 +181,12 @@
           "pages": [
             "api-reference/servers/list",
             "api-reference/servers/get",
+            "api-reference/servers/create",
+            "api-reference/servers/update",
+            "api-reference/servers/delete",
             "api-reference/servers/resources",
-            "api-reference/servers/domains"
+            "api-reference/servers/domains",
+            "api-reference/servers/validate"
           ]
         },
         {
@@ -200,6 +204,9 @@
           "pages": [
             "api-reference/projects/list",
             "api-reference/projects/get",
+            "api-reference/projects/create",
+            "api-reference/projects/update",
+            "api-reference/projects/delete",
             "api-reference/projects/environment"
           ]
         },
