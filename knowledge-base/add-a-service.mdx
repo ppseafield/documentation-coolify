@@ -48,7 +48,7 @@ services:
 You sometimes need the same domain, but with different **paths**.
 
 ```yaml
-# This make sense, not like the previous.
+# This makes sense, not like the previous.
 services:
   appwrite:
     environment:
@@ -179,12 +179,12 @@ services:
       - type: bind
         source: ./srv
         target: /srv
-        is_directory: true # This will tell Coolify to create the directory (this is not avaiable in a normal docker-compose)
+        is_directory: true # This will tell Coolify to create the directory (this is not available in a normal docker-compose)
 ```
 
 #### Create a file with content
 
-Here you can see how to add a file with content and an dynamic value that is coming from an environment variable.
+Here you can see how to add a file with content and a dynamic value that is coming from an environment variable.
 
 ```yaml
 services:
@@ -236,7 +236,7 @@ Example:
 
 Official templates stored [here](https://github.com/coollabsio/coolify/blob/main/templates/compose). They are just normal docker-compose files with a bit of magic.
 
-To add a new service, your can easily test your templates with `Docker Compose` deployments inside Coolify. It uses the same process to parse, generate and deploy as the one-click services.
+To add a new service, you can easily test your templates with `Docker Compose` deployments inside Coolify. It uses the same process to parse, generate and deploy as the one-click services.
 
 If you are done with tests and everything works, open a [PR](https://github.com/coollabsio/coolify/compare), that have the new `<service>.yaml` compose file under `/templates/compose`.
 
