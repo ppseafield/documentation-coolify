@@ -51,7 +51,7 @@ paths:
                   description: "The environment name."
                 github_app_uuid:
                   type: string
-                  description: "The Github App UUID."
+                  description: "The GitHub App UUID."
                 git_repository:
                   type: string
                   description: "The git repository URL."
@@ -188,7 +188,7 @@ paths:
                   description: "Pre deployment command container."
                 manual_webhook_secret_github:
                   type: string
-                  description: "Manual webhook secret for Github."
+                  description: "Manual webhook secret for GitHub."
                 manual_webhook_secret_gitlab:
                   type: string
                   description: "Manual webhook secret for Gitlab."
@@ -412,7 +412,7 @@ paths:
                   description: "Pre deployment command container."
                 manual_webhook_secret_github:
                   type: string
-                  description: "Manual webhook secret for Github."
+                  description: "Manual webhook secret for GitHub."
                 manual_webhook_secret_gitlab:
                   type: string
                   description: "Manual webhook secret for Gitlab."
@@ -466,7 +466,7 @@ paths:
       tags:
         - Applications
       summary: "Create (Private - GH App)"
-      description: "Create new application based on a private repository through a Github App."
+      description: "Create new application based on a private repository through a GitHub App."
       operationId: 4d46c84bda4f1a411f6dda15fce4061f
       requestBody:
         description: "Application object that needs to be created."
@@ -495,7 +495,7 @@ paths:
                   description: "The environment name."
                 github_app_uuid:
                   type: string
-                  description: "The Github App UUID."
+                  description: "The GitHub App UUID."
                 git_repository:
                   type: string
                   description: "The git repository URL."
@@ -632,7 +632,7 @@ paths:
                   description: "Pre deployment command container."
                 manual_webhook_secret_github:
                   type: string
-                  description: "Manual webhook secret for Github."
+                  description: "Manual webhook secret for GitHub."
                 manual_webhook_secret_gitlab:
                   type: string
                   description: "Manual webhook secret for Gitlab."
@@ -852,7 +852,7 @@ paths:
                   description: "Pre deployment command container."
                 manual_webhook_secret_github:
                   type: string
-                  description: "Manual webhook secret for Github."
+                  description: "Manual webhook secret for GitHub."
                 manual_webhook_secret_gitlab:
                   type: string
                   description: "Manual webhook secret for Gitlab."
@@ -1044,7 +1044,7 @@ paths:
                   description: "Pre deployment command container."
                 manual_webhook_secret_github:
                   type: string
-                  description: "Manual webhook secret for Github."
+                  description: "Manual webhook secret for GitHub."
                 manual_webhook_secret_gitlab:
                   type: string
                   description: "Manual webhook secret for Gitlab."
@@ -1206,7 +1206,7 @@ paths:
                   description: "Pre deployment command container."
                 manual_webhook_secret_github:
                   type: string
-                  description: "Manual webhook secret for Github."
+                  description: "Manual webhook secret for GitHub."
                 manual_webhook_secret_gitlab:
                   type: string
                   description: "Manual webhook secret for Gitlab."

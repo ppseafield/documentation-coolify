@@ -294,7 +294,7 @@
       "group": "Git",
       "pages": [
         {
-          "group": "Github",
+          "group": "GitHub",
           "pages": [
             "knowledge-base/git/github/integration",
             "knowledge-base/git/github/github-actions"
