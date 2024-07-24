@@ -63,21 +63,3 @@ Documentation: https://developers.cloudflare.com/ssl/origin-configuration/ssl-mo
     Mappings](/knowledge-base/applications#port-mappings) feature.
   </Accordion>
 </AccordionGroup>
-
-## Database
-
-<AccordionGroup>
-  <Accordion title="Cannot connect to database during build phase.">
-   Some applications / libraries (Prisma) need to connect to the database during the build phase, to run migrations for example.
-
-    ### Nixpacks
-    To do so, you need to set the database to public. You can do so by going to your database and clicking on `Accessible over the internet`.
-
-    > We are working on a better solution for this.
-
-    ## Other
-    Other build packs could reach database internally - if they are placed in the same network. You can check this by going to the `Server` tab on both resources and check if they are in the same network and server.
-
-  </Accordion>
-
-</AccordionGroup>
