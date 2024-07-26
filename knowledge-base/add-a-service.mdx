@@ -164,6 +164,92 @@ services:
       - APPWRITE_PASSWORD=$SERVICE_PASSWORD_64_APPWRITE
 ```
 
+### BASE64
+
+This helper is **NOT** using base64 encoding, but it's generating a random string.
+
+Example: `$SERVICE_BASE64_APPWRITE`
+
+Generator: `Str::random(32)`
+
+```yaml
+services:
+  appwrite:
+    environment:
+      - APPWRITE_SECRET=$SERVICE_BASE64_APPWRITE
+```
+
+If you wish to generate longer strings, you can use the following:
+
+#### BASE64_64
+
+Example: `$SERVICE_BASE64_64_APPWRITE`
+
+Generator: `Str::random(64)`
+
+```yaml
+services:
+  appwrite:
+    environment:
+      - APPWRITE_SECRET=$SERVICE_BASE64_64_APPWRITE
+```
+
+#### BASE64_128
+
+Example: `$SERVICE_BASE64_128_APPWRITE`
+
+Generator: `Str::random(128)`
+
+```yaml
+services:
+  appwrite:
+    environment:
+      - APPWRITE_SECRET=$SERVICE_BASE64_128_APPWRITE
+```
+
+### REALBASE64
+
+This helper does use base64 encoding unlike the other [base64](#base64) which just generates a random string.
+
+Example: `$SERVICE_REALBASE64_APPWRITE`
+
+Generator: `base64_encode(Str::random(32));`
+
+```yaml
+services:
+  appwrite:
+    environment:
+      - APPWRITE_SECRET=$SERVICE_REALBASE64_APPWRITE
+```
+
+If you wish to generate longer strings, you can use the following:
+
+#### REALBASE64_64
+
+Example: `$SERVICE_REALBASE64_64_APPWRITE`
+
+Generator: `base64_encode(Str::random(64));`
+
+```yaml
+services:
+  appwrite:
+    environment:
+      - APPWRITE_SECRET=$SERVICE_REALBASE64_64_APPWRITE
+```
+
+#### REALBASE64_128
+
+Example: `$SERVICE_REALBASE64_128_APPWRITE`
+
+Generator: `base64_encode(Str::random(128));`
+
+```yaml
+services:
+  appwrite:
+    environment:
+      - APPWRITE_SECRET=$SERVICE_REALBASE64_128_APPWRITE
+```
+
 ### Storage
 
 You can predefine storage normally in your compose file, but there are a few extra options that you can set to tell Coolify what to do with the storage.
