@@ -99,6 +99,20 @@
       ]
     },
     {
+      "group": "Databases",
+      "pages": [
+        "resources/databases/index",
+        "resources/databases/postgresql",
+        "resources/databases/redis",
+        "resources/databases/dragonfly",
+        "resources/databases/keydb",
+        "resources/databases/clickhouse",
+        "resources/databases/mongodb",
+        "resources/databases/mysql",
+        "resources/databases/mariadb"
+      ]
+    },
+    {
       "group": "Services",
       "pages": [
         "resources/services/index",
