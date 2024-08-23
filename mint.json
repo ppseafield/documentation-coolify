@@ -4,6 +4,9 @@
     "/openapi.yaml"
   ],
   "name": "Coolify Documentation",
+  "feedback": {
+    "suggestEdit": true
+  },
   "metadata": {
     "og:site_name": "Coolify",
     "og:description": "Self-hosting with superpowers.",
