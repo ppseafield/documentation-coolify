@@ -34,6 +34,10 @@
   },
   "topbarLinks": [
     {
+      "name": "Home",
+      "url": "https://coolify.io"
+    },
+    {
       "name": "Support",
       "url": "mailto:hi@coollabs.io"
     }
