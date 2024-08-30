@@ -163,9 +163,7 @@
       "group": "General",
       "pages": [
         "knowledge-base/faq",
-        "knowledge-base/applications",
         "knowledge-base/healthchecks",
-        "knowledge-base/databases",
         "knowledge-base/domains",
         "knowledge-base/monitoring",
         "knowledge-base/environment-variables",
@@ -174,7 +172,15 @@
         "knowledge-base/dns-configuration",
         "knowledge-base/drain-logs",
         "knowledge-base/commands",
-        "knowledge-base/add-a-service"
+        "knowledge-base/add-a-service",
+        "knowledge-base/instance-updates"
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "knowledge-base/applications",
+        "knowledge-base/databases"
       ]
     },
     {
