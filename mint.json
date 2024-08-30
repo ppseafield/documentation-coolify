@@ -103,6 +103,7 @@
         "resources/applications/django",
         "resources/applications/symfony",
         "resources/applications/svelte-kit",
+        "resources/applications/vuejs",
         "resources/applications/nextjs",
         "resources/applications/jekyll"
       ]
