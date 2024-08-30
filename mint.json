@@ -4,6 +4,9 @@
     "/openapi.yaml"
   ],
   "name": "Coolify Documentation",
+  "feedback": {
+    "suggestEdit": true
+  },
   "metadata": {
     "og:site_name": "Coolify",
     "og:description": "Self-hosting with superpowers.",
@@ -30,6 +33,10 @@
     }
   },
   "topbarLinks": [
+    {
+      "name": "Home",
+      "url": "https://coolify.io"
+    },
     {
       "name": "Support",
       "url": "mailto:hi@coollabs.io"
@@ -90,13 +97,30 @@
       "group": "Applications",
       "pages": [
         "resources/applications/index",
+        "resources/applications/vite",
         "resources/applications/rails",
         "resources/applications/laravel",
         "resources/applications/django",
+        "resources/applications/symfony",
         "resources/applications/svelte-kit",
         "resources/applications/nuxt",
+        "resources/applications/vuejs",
         "resources/applications/nextjs",
         "resources/applications/jekyll"
+      ]
+    },
+    {
+      "group": "Databases",
+      "pages": [
+        "resources/databases/index",
+        "resources/databases/postgresql",
+        "resources/databases/redis",
+        "resources/databases/dragonfly",
+        "resources/databases/keydb",
+        "resources/databases/clickhouse",
+        "resources/databases/mongodb",
+        "resources/databases/mysql",
+        "resources/databases/mariadb"
       ]
     },
     {
@@ -142,9 +166,7 @@
       "group": "General",
       "pages": [
         "knowledge-base/faq",
-        "knowledge-base/applications",
         "knowledge-base/healthchecks",
-        "knowledge-base/databases",
         "knowledge-base/domains",
         "knowledge-base/monitoring",
         "knowledge-base/environment-variables",
@@ -153,7 +175,15 @@
         "knowledge-base/dns-configuration",
         "knowledge-base/drain-logs",
         "knowledge-base/commands",
-        "knowledge-base/add-a-service"
+        "knowledge-base/add-a-service",
+        "knowledge-base/instance-updates"
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "knowledge-base/applications",
+        "knowledge-base/databases"
       ]
     },
     {

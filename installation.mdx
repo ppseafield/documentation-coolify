@@ -6,6 +6,10 @@ description: "A guide to install self-hosted version of Coolify on your server."
 
 To get started, you need a server, it can be a VPS, a Raspberry Pi, or any other server that you have SSH access to.
 
+<Warning>
+It is strongly recommended to use a fresh, newly created server for installing Coolify. Installing on an existing server with other applications may lead to conflicts or unexpected behavior.
+</Warning>
+
 <Tip>
 If you don't have a server or server provider yet, we prefer to use Hetzner.
 
@@ -108,7 +112,7 @@ This works with Docker Engine **(not Docker Desktop, for that, go [here](#docker
 **What it does?**
 The script will do the following on your operating system.
 
-- Install basic commands: `curl wget git jq jc`
+- Install basic commands: `curl wget git jq`
 - `Docker Engine` (24+).
 - Configures proper logging for `Docker Engine`.
 - Creates directory structure at `/data/coolify` for all the configuration files.
